@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rural Emergency App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+    nav { background: #0077b6; color: white; padding: 1rem; display: flex; justify-content: space-around; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    .container { padding: 2rem; }
+    .page { display: none; }
+    .active { display: block; }
+    .card { background: white; padding: 1rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    h2 { color: #0077b6; }
+    button { padding: 0.5rem 1rem; border: none; background: #0077b6; color: white; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" onclick="showPage('hospital')">Hospital</a>
+    <a href="#" onclick="showPage('shopkeeper')">Shopkeeper</a>
+    <a href="#" onclick="showPage('patient')">Patient</a>
+    <a href="#" onclick="showPage('emergency')">Emergency</a>
+    <a href="#" onclick="showPage('admin')">Admin</a>
+    <a href="#" onclick="showPage('awareness')">Awareness</a>
+  </nav>
+
+  <div class="container">
+    <div id="hospital" class="page active">
+      <h2>🏥 Hospital</h2>
+      <div class="card">Doctor Availability</div>
+      <div class="card">Beds & Oxygen Levels</div>
+      <div class="card">Blood Bank Info</div>
+    </div>
+
+    <div id="shopkeeper" class="page">
+      <h2>🛒 Shopkeeper</h2>
+      <div class="card">Update Medicine Stock</div>
+      <div class="card">View Nearby Orders</div>
+    </div>
+
+    <div id="patient" class="page">
+      <h2>👤 Patient</h2>
+      <div class="card"><button>Request Ambulance</button></div>
+      <div class="card"><button>Check Medicine Availability</button></div>
+      <div class="card"><button>View Health Record</button></div>
+    </div>
+
+    <div id="emergency" class="page">
+      <h2>🚨 Emergency</h2>
+      <div class="card">Emergency Button (Online/Offline)</div>
+      <div class="card">Problem Detection Questionnaire</div>
+      <div class="card">First Aid Instructions</div>
+    </div>
+
+    <div id="admin" class="page">
+      <h2>🛠 Admin</h2>
+      <div class="card">Update Hospital/Shopkeeper Data</div>
+      <div class="card">Monitor Emergency Reports</div>
+    </div>
+
+    <div id="awareness" class="page">
+      <h2>📊 Awareness</h2>
+      <div class="card">Disease Outbreak Alerts</div>
+      <div class="card">Preventive Measures</div>
+    </div>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
